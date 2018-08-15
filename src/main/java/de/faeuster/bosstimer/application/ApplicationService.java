@@ -25,4 +25,9 @@ public class ApplicationService {
         botManager.addBot(Optional.empty());
     }
 
+    public static void main(String[] args) {
+        ApplicationService service=new ApplicationService();
+        service.init();
+    }
+
 }

@@ -1,0 +1,9 @@
+de/faeuster/bosstimer/irc/BotManager.class
+de/faeuster/bosstimer/tray/TrayNotification.class
+de/faeuster/bosstimer/database/Inserter.class
+de/faeuster/bosstimer/application/ApplicationService.class
+de/faeuster/bosstimer/irc/listeners/MainListener.class
+de/faeuster/bosstimer/pojo/Boss.class
+de/faeuster/bosstimer/database/Database.class
+de/faeuster/bosstimer/application/Main.class
+de/faeuster/bosstimer/tray/NotifyService.class

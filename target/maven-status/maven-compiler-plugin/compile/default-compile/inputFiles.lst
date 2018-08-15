@@ -1,0 +1,9 @@
+/Users/benjaminfaeuster/IdeaProjects/BossTimer/src/main/java/de/faeuster/bosstimer/database/Database.java
+/Users/benjaminfaeuster/IdeaProjects/BossTimer/src/main/java/de/faeuster/bosstimer/tray/TrayNotification.java
+/Users/benjaminfaeuster/IdeaProjects/BossTimer/src/main/java/de/faeuster/bosstimer/pojo/Boss.java
+/Users/benjaminfaeuster/IdeaProjects/BossTimer/src/main/java/de/faeuster/bosstimer/application/Main.java
+/Users/benjaminfaeuster/IdeaProjects/BossTimer/src/main/java/de/faeuster/bosstimer/irc/BotManager.java
+/Users/benjaminfaeuster/IdeaProjects/BossTimer/src/main/java/de/faeuster/bosstimer/irc/listeners/MainListener.java
+/Users/benjaminfaeuster/IdeaProjects/BossTimer/src/main/java/de/faeuster/bosstimer/application/ApplicationService.java
+/Users/benjaminfaeuster/IdeaProjects/BossTimer/src/main/java/de/faeuster/bosstimer/database/Inserter.java
+/Users/benjaminfaeuster/IdeaProjects/BossTimer/src/main/java/de/faeuster/bosstimer/tray/NotifyService.java

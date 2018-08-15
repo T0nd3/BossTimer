@@ -28,7 +28,7 @@ public class Inserter {
         try {
 
 
-            Database instance = Database.getInstance();
+           Database instance = Database.getInstance();
 
             //Monday
             List<Boss> bosses = new ArrayList<>();
