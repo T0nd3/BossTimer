@@ -1,6 +1,7 @@
 package de.faeuster.bosstimer.database;
 
 import de.faeuster.bosstimer.pojo.Boss;
+import de.faeuster.bosstimer.pojo.TimeSlot;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
@@ -10,6 +11,7 @@ import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class Database {
     private static Database database;
@@ -65,29 +67,32 @@ public class Database {
         List<Boss> rs = entityManager.createQuery("from Boss ", Boss.class).getResultList();
         entityManager.getTransaction().commit();
         entityManager.close();
-        boolean nextDay = false;
+        boolean nextDay = true;
         for (Boss boss : rs) {
             if (LocalDateTime.now().getDayOfWeek().equals(boss.getDayOfWeek())) {
-                if (LocalTime.now().until(boss.getSpawnTime(), ChronoUnit.MINUTES) < 0 && boss.getSpawnTime().toString().equals("22:15")) {
-                    nextDay = true;
-                }
-                System.out.println(LocalTime.now());
-                System.out.println(boss.getSpawnTime());
+                LocalTime now = LocalTime.now();
+                LocalTime slotTime = boss.getTimeSlot().getSlotTime();
+
+
+
+//                if (LocalTime.now().until(boss.getSpawnTime(), ChronoUnit.MINUTES) < 0 && boss.getSpawnTime().toString().equals("22:15")) {
+//                    nextDay = true;
+//                }else{
+//                    System.out.println(boss);
+//                }
+//
             }
 
         }
         if (nextDay) {
             DayOfWeek plus = LocalDateTime.now().getDayOfWeek().plus(1);
             for (Boss r : rs) {
+//                if(r.getSpawnTime().isBefore(LocalTime.of(01,30)))
                 if (r.getDayOfWeek() == plus) {
-                    LocalTime now = LocalTime.now();
-                    System.out.println(now);
-                    System.out.println(r.getSpawnTime());
-                    System.err.println(now.until(r.getSpawnTime(), ChronoUnit.MINUTES));
+                    System.out.println(r.toString());
                 }
             }
         }
-
 
         return next;
     }

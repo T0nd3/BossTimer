@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.time.DayOfWeek;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Optional;
 
 import static javax.persistence.GenerationType.AUTO;
 
@@ -23,14 +24,19 @@ public class Boss {
     @NonNull
     private String name;
 
-    @NonNull
-    private LocalTime spawnTime;
+//  private LocalTime spawnTime;
     @NonNull
     private DayOfWeek dayOfWeek;
 
+    @NonNull
+    private TimeSlot timeSlot;
 
     @Override
     public String toString() {
-        return name + " Spawnzeit: " + dayOfWeek + " " + spawnTime.format(format);
+        return name + " Spawnzeit: " + dayOfWeek + " TimeSlot: "+timeSlot;
+    }
+
+    public TimeSlot getTimeSlot() {
+        return timeSlot;
     }
 }
