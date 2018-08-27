@@ -20,7 +20,7 @@ public class NotifyServiceImpl implements NotifyService {
 
 
 
-   @Scheduled(cron = "0 */1 * * * *")
+   @Scheduled(cron = "0 */15 * * * *")
     public void notifyUser() {
         List<Boss> nextData = null;
         try {

@@ -20,13 +20,12 @@ public class ApplicationServiceImpl  implements ApplicationService{
 @Autowired
 NotifyService notifyService;
 
-
     public void init() {
         long timeToBoss = Long.valueOf(rb.getString("TIMETOBOSS"));
         log.info("START Service");
         notifyService.notifyUser();
-//        BotManager botManager = new BotManager();
-//        botManager.addBot(Optional.empty());
+        BotManager botManager = new BotManager();
+        botManager.addBot(Optional.empty());
     }
 
 }

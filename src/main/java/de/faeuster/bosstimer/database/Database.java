@@ -70,30 +70,27 @@ public class Database {
         boolean nextDay = true;
         for (Boss boss : rs) {
             if (LocalDateTime.now().getDayOfWeek().equals(boss.getDayOfWeek())) {
-                LocalTime now = LocalTime.now();
-                LocalTime slotTime = boss.getTimeSlot().getSlotTime();
+                if (LocalTime.now().isBefore(boss.getTimeSlot().getSlotTime())) {
+                    nextDay = false;
+                    if (LocalTime.now().until(boss.getTimeSlot().getSlotTime(), ChronoUnit.HOURS) < 2){
+//                            && LocalTime.now().until(boss.getTimeSlot().getSlotTime(), ChronoUnit.MINUTES) > 30) {
+                            next.add(boss);
+                    }
+                }
 
-
-
-//                if (LocalTime.now().until(boss.getSpawnTime(), ChronoUnit.MINUTES) < 0 && boss.getSpawnTime().toString().equals("22:15")) {
-//                    nextDay = true;
-//                }else{
-//                    System.out.println(boss);
-//                }
-//
             }
 
         }
         if (nextDay) {
             DayOfWeek plus = LocalDateTime.now().getDayOfWeek().plus(1);
             for (Boss r : rs) {
-//                if(r.getSpawnTime().isBefore(LocalTime.of(01,30)))
                 if (r.getDayOfWeek() == plus) {
-                    System.out.println(r.toString());
+                    if (r.getTimeSlot().getSlotNumber() == 1) {
+                        next.add(r);
+                    }
                 }
             }
         }
-
         return next;
     }
 
