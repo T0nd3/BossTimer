@@ -23,7 +23,10 @@ NotifyService notifyService;
     public void init() {
         long timeToBoss = Long.valueOf(rb.getString("TIMETOBOSS"));
         log.info("START Service");
-        notifyService.notifyUser();
+        String property = System.getProperty("os.name");
+        if (property.equals("Windows")){
+            notifyService.notifyUser();
+        }
         BotManager botManager = new BotManager();
         botManager.addBot(Optional.empty());
     }

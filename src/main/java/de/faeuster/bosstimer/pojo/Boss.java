@@ -6,6 +6,8 @@ import javax.persistence.*;
 import java.time.DayOfWeek;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.TextStyle;
+import java.util.Locale;
 import java.util.Optional;
 
 import static javax.persistence.GenerationType.AUTO;
@@ -33,7 +35,7 @@ public class Boss {
 
     @Override
     public String toString() {
-        return name + " Spawnzeit: " + dayOfWeek + " TimeSlot: "+timeSlot;
+        return name + " Spawnzeit: " + dayOfWeek.getDisplayName(TextStyle.FULL, Locale.getDefault()) + ", "+timeSlot.getSlotTime();
     }
 
     public TimeSlot getTimeSlot() {
